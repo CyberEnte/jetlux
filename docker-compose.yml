@@ -3,9 +3,7 @@ services:
     build:
       context: ./backend
     ports:
-      - "8080:8080"         # PHP-Server hört auf 8000
-    volumes:
-      - ./backend:/var/www/html
+      - "8080:8080"
     networks:
       - jetnet
 
@@ -13,7 +11,7 @@ services:
     build:
       context: ./frontend
     ports:
-      - "8080:80"           # nginx oder dist läuft auf Port 80 im Container
+      - "8081:80"
     networks:
       - jetnet
     depends_on:
